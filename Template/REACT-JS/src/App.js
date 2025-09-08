@@ -3,6 +3,9 @@ import './App.css';
 
 // Approccio Funzionale
 function App() {
+
+  console.log("Funzione App eseguita");
+  
   return (
     <div className="App">
       <header className="App-header">
