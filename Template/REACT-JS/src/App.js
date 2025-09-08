@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
+// Approccio Funzionale
 function App() {
   return (
     <div className="App">
