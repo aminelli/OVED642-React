@@ -19,3 +19,20 @@ npm install typescript ts-node nodemon --save-dev
 ```bash
 npx tsc --init
 ```
+
+
+
+## 2. Esecuzione del codice Typescript
+
+- **Eseguire il codice una volta**:
+```bash
+npm start
+```
+- **Modalità sviluppo con ricarica automatica** (il codice si riavvia quando modifichi i file):
+```bash
+npm run dev
+```
+3. **Compilare il codice TypeScript in JavaScript**:
+```bash
+npm run build
+```
