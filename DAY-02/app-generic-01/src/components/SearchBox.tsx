@@ -34,13 +34,13 @@ export default function SearchBox({ onSearch, placeholder = "Cerca..." }: Search
 
     return (
         <>
-            <div className="relative">
+            <div className="relative mb-10">
                 <input
                     type="text"
                     value={query}
                     onChange={(e) => handleSearch(e.target.value)}
                     placeholder={placeholder}
-                    className="w-full border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="text-gray-900 w-full border border-gray-300 rounded-lg  py-2 px-10 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <span className="text-gray-400">🔍</span>
