@@ -30,9 +30,12 @@ export async function* streamData(): AsyncGenerator<Partial<StreamingData>, void
     yield { todos };
 }
 
+/*
 for await (const val of streamData()) {
     console.log(val);
 }
+    */
+
 /*
 export async function* streamData() {
   const items = ["a", "b", "c"];
