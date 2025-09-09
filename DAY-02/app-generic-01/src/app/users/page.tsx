@@ -7,9 +7,10 @@ import { getUsers } from "@/lib/api";
 // Server Component asincrono per gli utenti
 async function UsersList() {
   const resp = await getUsers();
-
+  // throw new Error('Errore generato a mano');
+  
   if (!resp.success) {
-    throw new Error('Failed to fetch users: ${resp.message}');
+    throw new Error(`Failed to fetch users: ${resp.message}`);
   }
 
   return (
