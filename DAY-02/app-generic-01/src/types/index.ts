@@ -11,13 +11,13 @@ export interface Post {
   title     : string;
   content   : string;
   userId    : number;
-  createdAt : Date;
-  like      : number;
+  createdAt : string;
+  likes     : number;
 }
 
 
 export interface ApiResponse<T> {
-  data   : T;
-  status : number;
+  data     : T;
+  success  : boolean;
   message? : string;
 }
