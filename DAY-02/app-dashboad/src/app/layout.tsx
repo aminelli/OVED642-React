@@ -21,9 +21,13 @@ export default function RootLayout({
           <div className="container mx-auto">
             <h1 className="text-2xl font-bold">Adavanced Layouts</h1>
             <nav className="mt-2">
+              <Link href="/" className="mr-4 hover:underline">Home</Link>
+              
               <Link href="/dashboard" className="mr-4 hover:underline">Dashboard</Link>
               <Link href="/shop" className="mr-4 hover:underline">Shop</Link>
               <Link href="/blog" className="mr-4 hover:underline">Blog</Link>
+
+              <Link href="/login" className="mr-4 hover:underline">Login</Link>
             </nav>
           </div>
         </header>
