@@ -53,7 +53,7 @@ export default function SearchBox({ onSearch, placeholder = "Cerca..." }: Search
                         ✕
                     </button>
 
-                }
+                )}
             </div>
         
         </>
