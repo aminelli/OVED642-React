@@ -1,6 +1,7 @@
 import React from 'react';
 import {User, Post} from '../types';
 import {formatDateIT} from '../lib/date';
+import InteractivePostActions from './InteractivePostActions';
 
 interface PostCardProps {
     post: Post;
@@ -25,6 +26,7 @@ export default function PostCard({ post, author }: PostCardProps) {
                 <div className="text-gray-500 max-w-none mb-4">
                     <p>{post.content}</p>
                 </div>
+                <InteractivePostActions postId={post.id} initialLikes={post.likes} />
             </article>
         </>
     );
