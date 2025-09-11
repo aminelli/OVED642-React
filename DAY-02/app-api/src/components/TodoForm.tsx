@@ -3,7 +3,7 @@
 import { createTodo } from "@/lib/actions";
 import { TodoItem, User} from "@/types";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 
 interface TodoFormProps {
     users: User[]
@@ -11,17 +11,19 @@ interface TodoFormProps {
 
 interface FormState {
     success: boolean,
-    message: string
+    message: string,
+    title: string | ""
 }
 
  
 export default function TodoForm({ users} : TodoFormProps) {
 
+
     const [state, formAction, isPending] = useActionState(
         async (prevState: any, formData: FormData) => {
             try {
-                await createTodo(formData);
-                return { success: true, error: null }
+                let todoItem = await createTodo(formData);
+                return { success: true, error: null, title: todoItem.title }
             } catch (error) {
                 return { success: false, error: "Errore nella creazione del todo"}   
             }
@@ -32,6 +34,8 @@ export default function TodoForm({ users} : TodoFormProps) {
         }
     );
 
+    const [title, setTitle] = useState("");
+
     return (
         <>
         <div className="grid">
@@ -41,7 +45,10 @@ export default function TodoForm({ users} : TodoFormProps) {
 
                     <div className="form-group">
                         <label htmlFor="title">Titolo</label>
-                        <input type="text" name="title" id="title" required placeholder="Attività da svolgere" disabled={isPending} />
+                        <input type="text" name="title" id="title" value={title}
+                          required placeholder="Attività da svolgere" disabled={isPending}
+                          onChange={(e) => setTitle(e.target.value)}
+                          />
                     </div>
 
                     <div className="form-group">
