@@ -23,6 +23,7 @@ export default function RootLayout({
               <Link href="/">Home</Link>
               <Link href="/streaming">Streaming</Link> 
               <Link href="/posts">Posts</Link>   
+              <Link href="/todos">Todos</Link> 
               <Link href="/users">Users</Link>              
             </div>
           </div>

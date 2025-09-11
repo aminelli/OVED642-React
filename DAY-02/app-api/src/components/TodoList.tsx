@@ -34,6 +34,38 @@ export default function TodoList({todos, users}: TodoListProps) {
 
     return (
         <>
+        <div>
+            <h2>Todo ({optimisticTodos.length})</h2>
+
+            <div style={{marginBottom: '1rem'}}>
+                <strong>Completati:</strong> {optimisticTodos.filter(todo => todo.completed).length} / {optimisticTodos.length}
+
+            </div>
+            <div className="grid">
+                {
+                    optimisticTodos.map((todo) => (
+                        <div key={todo.id} className="card">
+                            <div  className={`.todo-item${todo.completed ? '.completed' : ''}`}>
+                                <input 
+                                    type="checkbox" 
+                                    className="checkbox"
+                                    checked={todo.completed}
+                                    onChange={() => handleToggle(todo)}
+                                    disabled={isPending} 
+                                />
+                                <div className="todo-title">
+                                    {todo.title}
+                                </div>
+                                <div style={{marginLeft: 'auto', fontSize: '0.8rem', color: 'blue'}}>
+                                    {getUserName(users, todo.userId)}
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+        </div>
         </>
     );
 
