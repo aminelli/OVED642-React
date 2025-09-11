@@ -1,26 +1,22 @@
-import TodoList from "@/components/TodoList";
-import { fetchTodos, fetchUsers, toggleTodo } from "@/lib/actions";
-import { TodoItem, User } from "@/types";
+import { fetchTodos, fetchUsers } from "@/lib/actions";
+import TodoForm from "../../components/TodoForm";
+import TodoList from "../../components/TodoList";
+
 
 
 export default async function TodosPage() {
-
-    /*
-    const handleToggleTodo = async (todoId: number, completed:boolean) => {
-        toggleTodo(todoId, completed);
-        todos = await fetchTodos();
-    };
-    */
+    const [todos, users] = await Promise.all([
+        fetchTodos(), 
+        fetchUsers()
+    ]);
+    
 
     return (
-        <>
-            <div>
-                <h1>Todos</h1>
-                <p>CRUD Esempio</p>
-                <TodoList />
-            </div>
-        </>
+        <div>
+            <h1>Gestione TODO</h1>
+            <p>CRUD Example</p>
+
+            <TodoList todos={todos} users={users} />
+        </div>
     );
-
-
 }
