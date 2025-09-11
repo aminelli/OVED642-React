@@ -20,7 +20,8 @@ export default function TodoList({ todos, users }: TodoListProps) {
         (state, {id, completed} : {id: Number; completed: boolean} ) => state.map((todo) => todo.id === id ? {...todo, completed} : todo)
     );
 
-     
+    console.log("TodoList");
+
     const handleToggle = (todo: TodoItem) => {
         startTransition(() => {
             setOptimisticTodos({id: todo.id, completed: !todo.completed});
@@ -38,7 +39,8 @@ export default function TodoList({ todos, users }: TodoListProps) {
 
             <div className="grid">
             {
-                optimisticTodos.slice(0, 20).map((todo) => (
+                //optimisticTodos.slice(0, 20).map((todo) => (
+                optimisticTodos.map((todo) => (
                     <div className="card" key={todo.id} data-id={todo.id}>
                         <div className={`.todo-item ${todo.completed ? 'completed' : ''}`}  >
                            

@@ -74,6 +74,8 @@ export async function createTodo(formData: FormData) : Promise<TodoItem> {
     const title = formData.get('title') as string;
     const userId = parseInt(formData.get('userId') as string);
 
+    console.log("createTodo");
+
     const response = await fetch(
         'http://localhost:4000/todos',
         {
