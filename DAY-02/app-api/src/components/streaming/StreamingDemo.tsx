@@ -16,34 +16,34 @@ export default function StreamingDemo() {
     const [todos, setTodos]       = useState<TodoItem[]>([]);
 
     const [loading, setLoading]   = useState({
-        users: false,
-        posts: false,
-        comments: false,
-        todos: false
+        users: true,
+        posts: true,
+        comments: true,
+        todos: true
     });
 
    const handleStreaming = async () => {
         try {
             for await (const chunk of streamData()) {
 
-                if (chunk.users && (!loading.users)) {
+                if (chunk.users && loading.users) {
                     setUsers(chunk.users);
-                    setLoading(prev => ({...prev, users: true}));
+                    setLoading(prev => ({...prev, users: false}));
                 }
 
-                if (chunk.posts && (!loading.posts)) {
+                if (chunk.posts && loading.posts) {
                     setPosts(chunk.posts);
-                    setLoading(prev => ({...prev, posts: true}));
+                    setLoading(prev => ({...prev, posts: false}));
                 }
 
-                if (chunk.comments && (!loading.comments)) {
+                if (chunk.comments && loading.comments) {
                     setComments(chunk.comments);
-                    setLoading(prev => ({...prev, comments: true}));
+                    setLoading(prev => ({...prev, comments: false}));
                 }
 
-                if (chunk.todos && (!loading.todos)) {
+                if (chunk.todos && loading.todos) {
                     setTodos(chunk.todos);
-                    setLoading(prev => ({...prev, todos: true}));
+                    setLoading(prev => ({...prev, todos: false}));
                 }
 
             }

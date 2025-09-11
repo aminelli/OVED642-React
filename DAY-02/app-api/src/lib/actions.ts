@@ -7,7 +7,7 @@ import {revalidatePath} from "next/cache";
 export async function fetchUsers() : Promise<User[]> {
     
     const response = await fetch(
-        'https://jsonplaceholder.typicode.com/users',
+        'http://localhost:4000/users',
         {
             cache: 'no-store'
         }
@@ -23,7 +23,7 @@ export async function fetchUsers() : Promise<User[]> {
 export async function fetchPosts() : Promise<Post[]> {
     
     const response = await fetch(
-        'https://jsonplaceholder.typicode.com/posts',
+        'http://localhost:4000/posts',
         {
             cache: 'no-store'
         }
@@ -39,7 +39,7 @@ export async function fetchPosts() : Promise<Post[]> {
 export async function fetchComments() : Promise<Comment[]> {
     
     const response = await fetch(
-        'https://jsonplaceholder.typicode.com/comments',
+        'http://localhost:4000/comments',
         {
             cache: 'no-store'
         }
@@ -56,7 +56,7 @@ export async function fetchComments() : Promise<Comment[]> {
 export async function fetchTodos() : Promise<TodoItem[]> {
     
     const response = await fetch(
-        'https://jsonplaceholder.typicode.com/todos',
+        'http://localhost:4000/todos',
         {
             cache: 'no-store'
         }
@@ -75,7 +75,7 @@ export async function createTodo(formData: FormData) : Promise<TodoItem> {
     const userId = parseInt(formData.get('userId') as string);
 
     const response = await fetch(
-        'https://jsonplaceholder.typicode.com/todos',
+        'http://localhost:4000/todos',
         {
             method: 'POST',
             headers: {
@@ -103,7 +103,7 @@ export async function createTodo(formData: FormData) : Promise<TodoItem> {
 export async function toggleTodo(id: number, completed: boolean) : Promise<TodoItem> {
     
     const response = await fetch(
-        `https://jsonplaceholder.typicode.com/todos/${id}`,
+        `http://localhost:4000/todos/${id}`,
         {
             method: 'PATCH',
             headers: {
