@@ -1,3 +1,36 @@
+
+```bash
+# crea progetto con TypeScript
+npx create-next-app@latest my-auth-app --typescript --tailwind --eslint
+
+cd my-auth-app
+
+# installa next-auth
+npm install next-auth
+```
+
+Login demo:
+
+Email: admin@test.com
+
+Password: admin123
+
+generazione jwt:
+```bash
+openssl rand -base64 32
+# oppure
+node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"
+```
+
+altre librerie utilizate
+
+```bash
+
+npm install jsonwebtoken bcryptjs jose
+
+```
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
