@@ -1,3 +1,3 @@
 @echo off
 
-npx json-server --watch db.json --port 4000
+npx json-server --watch db.json --port 4000 

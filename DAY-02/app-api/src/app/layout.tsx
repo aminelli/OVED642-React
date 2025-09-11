@@ -21,7 +21,9 @@ export default function RootLayout({
             <h1>Demo Api</h1>
             <div className="nav-links">
               <Link href="/">Home</Link>
-              <Link href="/streaming">Streaming</Link>              
+              <Link href="/streaming">Streaming</Link> 
+              <Link href="/posts">Posts</Link>   
+              <Link href="/users">Users</Link>              
             </div>
           </div>
         </nav>
